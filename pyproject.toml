@@ -11,4 +11,5 @@ dependencies = [
 [dependency-groups]
 dev = [
     "dvc>=3.67.1",
+    "marimo>=0.23.6",
 ]

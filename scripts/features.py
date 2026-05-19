@@ -9,6 +9,9 @@ df = pd.read_csv(INPUT)
 
 row_count_before = len(df)
 
+df["duration_seconds"] = pd.to_numeric(df["duration_seconds"], errors="raise")
+df["duration_seconds"] = df["duration_seconds"].astype(int)
+
 df["duration_minutes"] = df["duration_seconds"] / 60
 df["weekday"] = pd.to_datetime(df["date"], errors="raise").dt.day_name()
 
